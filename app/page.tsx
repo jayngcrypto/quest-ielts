@@ -13,12 +13,12 @@ const ZONES = [
 ];
 
 const FEATS = [
-  { icon:"map",    bg:"#EDE8FF", border:"#A78BFA", title:"Bản đồ hành trình RPG",   desc:"6 khu vực, mỗi khu vực là một kỹ năng IELTS. Mở khoá dần dần — cảm giác như leo cột mốc trong game phiêu lưu." },
-  { icon:"star",   bg:"#FFF3CC", border:"#FBBF24", title:"Hệ thống XP & Level",      desc:"Mỗi bài hoàn thành = nhận XP. Tích đủ XP để lên cấp, mở khoá thử thách mới và nhận badge đặc biệt." },
-  { icon:"person", bg:"#E4F7F0", border:"#34D399", title:"AI chấm Writing & Speaking", desc:"Viết essay hoặc nói — AI chấm điểm theo 4 tiêu chí IELTS, sửa lỗi và gợi ý cải thiện ngay lập tức." },
-  { icon:"check",  bg:"#E3F2FF", border:"#60A5FA", title:"Nhiệm vụ hằng ngày",       desc:"3–5 nhiệm vụ ngắn mỗi ngày, thiết kế để không bao giờ quá tải. Học 15 phút mỗi ngày đủ để tiến bộ rõ rệt." },
-  { icon:"flame",  bg:"#FFE8E0", border:"#FB7185", title:"Streak & Chuỗi ngày",      desc:"Giữ streak để nhân đôi XP. Phá streak = mất bonus — vừa đủ để tạo động lực học đều đặn mỗi ngày." },
-  { icon:"trophy", bg:"#FBEAF0", border:"#F472B6", title:"Thành tích & Badge",       desc:"Mở khoá badge đặc biệt tại mỗi cột mốc. Mỗi thành tích là bằng chứng hành trình bạn đã đi qua." },
+  { icon:"person", bg:"#E4F7F0", border:"#34D399", title:"AI chấm Writing & Speaking",   desc:"Viết essay hoặc nói — AI chấm điểm tức thì theo 4 tiêu chí IELTS. Sửa lỗi, gợi ý cải thiện, band score chi tiết. Không cần giáo viên." },
+  { icon:"map",    bg:"#EDE8FF", border:"#A78BFA", title:"6 khu vực kỹ năng RPG",       desc:"Đảo Từ Vựng → Thung Lũng Nghe → Khu Rừng Đọc → Thành Phố Viết → Đấu Trường Nói → Lâu Đài Mock Test. Mở khoá dần như game." },
+  { icon:"flame",  bg:"#FFE8E0", border:"#FB7185", title:"Dictation & Shadowing",       desc:"Nghe chép chính tả câu ngắn, luyện nói theo (shadowing) từ cơ bản đến nâng cao. Cách nhanh nhất cải thiện listening & speaking." },
+  { icon:"check",  bg:"#E3F2FF", border:"#60A5FA", title:"TED Talks + Reading thật",    desc:"Xem TED Talk rồi trả lời 20 câu hỏi. Đọc passages dài, click từ lạ xem nghĩa + phát âm ngay. Học từ ngữ cảnh thật." },
+  { icon:"star",   bg:"#FFF3CC", border:"#FBBF24", title:"XP, Level & Streak",          desc:"Mỗi bài = XP. Tích đủ lên cấp. Streak mỗi ngày giữ động lực. 48 huy hiệu từ Phổ thông đến Huyền thoại đang chờ bạn." },
+  { icon:"trophy", bg:"#FBEAF0", border:"#F472B6", title:"Mock Test Cambridge thật",    desc:"Thi thử full 4 kỹ năng với đề Cambridge IELTS 15-18. Ghi điểm, theo dõi tiến độ band. Sẵn sàng cho ngày thi thật." },
 ];
 
 function FeatIcon({ name, bg, border }: { name:string; bg:string; border:string }) {
@@ -67,8 +67,8 @@ export default function LandingPage() {
             cuộc phiêu lưu.
           </h1>
           <p className="text-base text-q-text-2 leading-relaxed mb-8 max-w-md animate-fade-up" style={{animationDelay:"0.15s"}}>
-            Học theo lộ trình RPG, nhận XP mỗi ngày, lên cấp từng bước.
-            Không còn học khô khan — chỉ có niềm vui chinh phục band mục tiêu.
+            AI chấm Writing & Speaking. Dictation & Shadowing luyện tai.
+            TED Talks. Mock Test Cambridge. Tất cả miễn phí — chỉ cần bắt đầu.
           </p>
           <div className="flex gap-3 mb-5 animate-fade-up" style={{animationDelay:"0.3s"}}>
             <Link href="/register"
@@ -159,7 +159,7 @@ export default function LandingPage() {
       {/* FEATURES — with hover animations */}
       <section id="features" className="px-14 py-14 bg-q-card">
         <div className="text-[11px] font-extrabold text-q-purple-d tracking-widest uppercase mb-2">Tại sao chọn Quest IELTS?</div>
-        <h2 className="text-3xl font-black text-q-text mb-10">Học đúng cách. Học đủ động lực. Học mỗi ngày.</h2>
+        <h2 className="text-3xl font-black text-q-text mb-10">Không chỉ học — mà là trải nghiệm chinh phục band.</h2>
         <div className="grid grid-cols-3 gap-5 animate-stagger">
           {FEATS.map(f => (
             <div key={f.title} className="bg-q-cream border-[2.5px] border-q-border rounded-3xl p-6 hover-lift cursor-default group">
@@ -207,8 +207,8 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-        <h2 className="text-4xl font-black text-q-text mb-3">Sẵn sàng bắt đầu hành trình?</h2>
-        <p className="text-base text-q-text-2 mb-8">Miễn phí hoàn toàn. Không cần thẻ tín dụng. Chỉ cần quyết tâm.</p>
+        <h2 className="text-4xl font-black text-q-text mb-3">Sẵn sàng chinh phục band mục tiêu?</h2>
+        <p className="text-base text-q-text-2 mb-8">AI chấm điểm. Gamified. Miễn phí hoàn toàn. Bắt đầu ngay — không cần thẻ tín dụng.</p>
         <Link href="/register"
           className="inline-block px-12 py-4 rounded-pill text-lg font-extrabold text-white bg-q-purple border-[3px] border-q-purple-d hover:scale-105 transition-all duration-200 no-underline animate-glow">
           Bắt đầu hành trình ngay →
