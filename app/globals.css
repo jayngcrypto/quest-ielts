@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap");
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+:root {
+  --font-nunito: "Nunito", sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-nunito);
+  background: #FFF8F0;
+  color: #2D2040;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* XP bar animation helper */
+.xp-bar-fill { animation: xp-fill 1s ease both; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #EDE8FF; border-radius: 99px; }
+::-webkit-scrollbar-thumb { background: #A78BFA; border-radius: 99px; }
+
+/* Focus ring */
+*:focus-visible {
+  outline: 3px solid #A78BFA;
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+/* RPG Landing Page Animations */
+.animate-stagger > * {
+  opacity: 0;
+  animation: fade-up 0.5s ease forwards;
+}
+.animate-stagger > *:nth-child(1) { animation-delay: 0.1s; }
+.animate-stagger > *:nth-child(2) { animation-delay: 0.2s; }
+.animate-stagger > *:nth-child(3) { animation-delay: 0.3s; }
+.animate-stagger > *:nth-child(4) { animation-delay: 0.4s; }
+.animate-stagger > *:nth-child(5) { animation-delay: 0.5s; }
+.animate-stagger > *:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes fade-up {
+  0%   { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Sparkle particles */
+.sparkle-container {
+  position: relative;
+  overflow: hidden;
+}
+.sparkle-container::before,
+.sparkle-container::after {
+  content: "✦";
+  position: absolute;
+  font-size: 14px;
+  color: #FBBF24;
+  animation: sparkle 2s ease-in-out infinite;
+  pointer-events: none;
+}
+.sparkle-container::before {
+  top: 10%;
+  right: 15%;
+  animation-delay: 0s;
+}
+.sparkle-container::after {
+  bottom: 20%;
+  left: 10%;
+  animation-delay: 1s;
+}
+
+@keyframes sparkle {
+  0%,100% { opacity: 0; transform: scale(0) rotate(0deg); }
+  50%     { opacity: 1; transform: scale(1) rotate(180deg); }
+}
+
+/* Gradient text for RPG headings */
+.rpg-gradient-text {
+  background: linear-gradient(135deg, #A78BFA 0%, #F472B6 50%, #FBBF24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Hover card lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(167,139,250,0.18);
+}
+
+/* RPG glow border */
+.rpg-glow {
+  position: relative;
+}
+.rpg-glow::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #A78BFA, #F472B6, #FBBF24, #34D399);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.rpg-glow:hover::after {
+  opacity: 1;
+}
+
+/* Birthday Gift Popup Animations */
+@keyframes confetti {
+  0%   { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+@keyframes wiggle-slow {
+  0%, 100% { transform: rotate(-3deg); }
+  50%      { transform: rotate(3deg); }
+}
+
+@keyframes fade-in {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes bounce-in {
+  0%   { opacity: 0; transform: scale(0.5); }
+  60%  { transform: scale(1.1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.animate-confetti {
+  animation: confetti 3s ease-in forwards;
+}
+
+.animate-wiggle-slow {
+  animation: wiggle-slow 1.5s ease-in-out infinite;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease forwards;
+}
+
+.animate-bounce-in {
+  animation: bounce-in 0.5s ease forwards;
+}
