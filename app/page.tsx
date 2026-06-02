@@ -47,7 +47,7 @@ export default function LandingPage() {
       <Topbar />
 
       {/* HERO — RPG style with sparkles */}
-      <section className="grid grid-cols-2 min-h-[520px] items-center overflow-hidden relative sparkle-container">
+      <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px] lg:min-h-[520px] items-center overflow-hidden relative sparkle-container">
         {/* Floating particles */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <div className="absolute top-[15%] left-[5%] w-3 h-3 rounded-full bg-q-amber opacity-40 animate-float" style={{animationDelay:"0s"}}/>
@@ -56,12 +56,12 @@ export default function LandingPage() {
           <div className="absolute top-[60%] left-[35%] w-2 h-2 rounded-full bg-q-pink opacity-25 animate-float-slow" style={{animationDelay:"1.5s"}}/>
         </div>
 
-        <div className="px-14 py-14 relative z-10">
+        <div className="px-6 sm:px-10 lg:px-14 py-10 lg:py-14 relative z-10">
           <div className="inline-flex items-center gap-2 bg-q-yellow border-2 border-q-amber rounded-pill px-4 py-1.5 mb-6 animate-bounce-in">
             <svg width="14" height="14" viewBox="0 0 14 14" className="animate-wiggle"><polygon points="7,1 8.8,5.2 13.5,5.4 10,8.4 11.1,13 7,10.5 2.9,13 4,8.4 0.5,5.4 5.2,5.2" fill="#FBBF24"/></svg>
             <span className="text-xs font-extrabold text-q-amber-d">Nền tảng IELTS dành riêng cho người Việt</span>
           </div>
-          <h1 className="text-5xl font-black text-q-text leading-[1.12] tracking-tight mb-4 animate-fade-up">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-q-text leading-[1.12] tracking-tight mb-4 animate-fade-up">
             Biến hành trình<br />
             <span className="rpg-gradient-text underline decoration-[#D8CCFF] underline-offset-[6px]">IELTS</span> thành<br />
             cuộc phiêu lưu.
@@ -83,7 +83,7 @@ export default function LandingPage() {
         </div>
 
         {/* Hero right — visual icons floating */}
-        <div className="bg-q-lav h-full flex items-center justify-center p-10 relative overflow-hidden border-l-[2.5px] border-q-border">
+        <div className="hidden lg:flex bg-q-lav h-full items-center justify-center p-10 relative overflow-hidden border-l-[2.5px] border-q-border">
           {/* Background decorative circles */}
           <div className="absolute w-[280px] h-[280px] rounded-full border-[3px] border-q-purple/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-pulse-ring" />
           <div className="absolute w-[380px] h-[380px] rounded-full border-[2px] border-q-purple/10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
@@ -157,10 +157,10 @@ export default function LandingPage() {
       />
 
       {/* FEATURES — with hover animations */}
-      <section id="features" className="px-14 py-14 bg-q-card">
+      <section id="features" className="px-6 sm:px-10 lg:px-14 py-10 lg:py-14 bg-q-card">
         <div className="text-[11px] font-extrabold text-q-purple-d tracking-widest uppercase mb-2">Tại sao chọn Quest IELTS?</div>
-        <h2 className="text-3xl font-black text-q-text mb-10">Không chỉ học — mà là trải nghiệm chinh phục band.</h2>
-        <div className="grid grid-cols-3 gap-5 animate-stagger">
+        <h2 className="text-2xl lg:text-3xl font-black text-q-text mb-8 lg:mb-10">Không chỉ học — mà là trải nghiệm chinh phục band.</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5 animate-stagger">
           {FEATS.map(f => (
             <div key={f.title} className="bg-q-cream border-[2.5px] border-q-border rounded-3xl p-6 hover-lift cursor-default group">
               <div className="group-hover:animate-wiggle">
@@ -174,11 +174,11 @@ export default function LandingPage() {
       </section>
 
       {/* ZONES — with RPG decorations */}
-      <section id="zones" className="px-14 py-14 bg-q-lav relative overflow-hidden">
+      <section id="zones" className="px-6 sm:px-10 lg:px-14 py-10 lg:py-14 bg-q-lav relative overflow-hidden">
         <div className="relative z-10">
           <div className="text-[11px] font-extrabold text-q-purple-d tracking-widest uppercase mb-2">6 Khu vực học tập</div>
-          <h2 className="text-3xl font-black text-q-text mb-10">Hành trình từ cơ bản đến band 8+</h2>
-          <div className="grid grid-cols-6 gap-4 animate-stagger">
+          <h2 className="text-2xl lg:text-3xl font-black text-q-text mb-8 lg:mb-10">Hành trình từ cơ bản đến band 8+</h2>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 lg:gap-4 animate-stagger">
             {ZONES.map(z => (
               <div key={z.id} className="rounded-3xl border-[2.5px] p-4 text-center hover-lift cursor-pointer group"
                 style={{ background:z.bg, borderColor:z.border }}>
@@ -192,8 +192,8 @@ export default function LandingPage() {
       </section>
 
       {/* CTA BOTTOM — with glow */}
-      <section className="px-14 py-16 bg-q-card text-center relative sparkle-container">
-        <div className="flex justify-center gap-8 mb-8">
+      <section className="px-6 sm:px-10 lg:px-14 py-12 lg:py-16 bg-q-card text-center relative sparkle-container">
+        <div className="flex justify-center gap-6 lg:gap-8 mb-8">
           {[
             { Illo:VocabIllo, color:"#FBBF24", stroke:"#B45309", delay:"0s" },
             { Illo:SpeakIllo, color:"#F472B6", stroke:"#BE3A85", delay:"0.3s" },
@@ -207,7 +207,7 @@ export default function LandingPage() {
             </div>
           ))}
         </div>
-        <h2 className="text-4xl font-black text-q-text mb-3">Sẵn sàng chinh phục band mục tiêu?</h2>
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-q-text mb-3">Sẵn sàng chinh phục band mục tiêu?</h2>
         <p className="text-base text-q-text-2 mb-8">AI chấm điểm. Gamified. Miễn phí hoàn toàn. Bắt đầu ngay — không cần thẻ tín dụng.</p>
         <Link href="/register"
           className="inline-block px-12 py-4 rounded-pill text-lg font-extrabold text-white bg-q-purple border-[3px] border-q-purple-d hover:scale-105 transition-all duration-200 no-underline animate-glow">
@@ -217,7 +217,7 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-q-lav border-t-[2.5px] border-q-border px-14 py-8">
+      <footer className="bg-q-lav border-t-[2.5px] border-q-border px-6 sm:px-10 lg:px-14 py-8">
         <div className="flex flex-col items-center gap-4">
           <div className="flex items-center gap-2">
             <div className="w-7 h-7 bg-q-purple rounded-[8px] border-2 border-q-purple-d flex items-center justify-center animate-float">
